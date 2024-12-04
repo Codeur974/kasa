@@ -1,5 +1,13 @@
+import Banner from "../../components/Banner/Banner";
+import Card from "../../components/Cards/Cards";
+
 function Home() {
-  return <div className="hello">HOME</div>;
+  return (
+    <div>
+      <Banner />
+      <Card />
+    </div>
+  );
 }
 
 export default Home;
