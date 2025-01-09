@@ -5,6 +5,12 @@
   align-items: center;
   width: 100%;
   margin: auto;
+  img {
+    @media (max-width: 768px) {
+      width: 145px;
+      height: 47px;
+    }
+  }
 
   .navbar {
     display: flex;

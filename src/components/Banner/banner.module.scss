@@ -1,8 +1,9 @@
 .banner {
   max-width: 1240px;
   width: 100%;
-  height: 68px;
+  height: auto;
   margin: 50px auto;
+  margin-bottom: 35px;
 
   img {
     width: 100%;
@@ -11,15 +12,31 @@
     object-position: center; /* Centrer l'image dans la div */
     border-radius: 25px;
     filter: brightness(50%);
+    @media (max-width: 768px) {
+      width: 100%;
+      height: 111px;
+    }
   }
   .banner__title {
     position: absolute;
-    top: 25%;
+    top: 26%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
     font-size: 48px;
     font-weight: 700;
     text-align: center;
+    @media (max-width: 768px) {
+      width: 50%;
+      font-size: 24px;
+      color: white;
+      top: 17%;
+      left: 65%;
+      text-align: start;
+      margin-left: 10px;
+    }
+  }
+  @media (max-width: 768px) {
+    width: 95%;
   }
 }
