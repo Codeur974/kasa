@@ -21,7 +21,7 @@ const Logement = () => {
       <div className={Styles.logement__content}>
         <div className={Styles.logement__block}>
           <h2 className={Styles.logement__title}>{logement.title}</h2>
-          <h3 className={Styles.logement__location}>{logement.location}</h3>
+          <p className={Styles.logement__location}>{logement.location}</p>
           <h4 className={Styles.logement__tags}>
             {logement.tags.map((tag, index) => (
               <span key={index} className={Styles.logement__tag}>
@@ -29,14 +29,18 @@ const Logement = () => {
               </span>
             ))}
           </h4>
-          <Collaps title={"Description"} className={Styles.logement__collaps} />
+          <Collaps
+            title={"Description"}
+            description={logement.description}
+            className={Styles.logement__collaps}
+          />
         </div>
 
         <div className={Styles.logement__block}>
           <div className={Styles.logement__host}>
             <div className={Styles.logement__host__name}>
-              <h3>{firstName}</h3>
-              <h3>{lastName}</h3>
+              <p>{firstName}</p>
+              <p className={Styles.logement__lastname}>{lastName}</p>
             </div>
 
             <img
@@ -49,7 +53,19 @@ const Logement = () => {
             <Rating rating={logement.rating} />
           </div>
 
-          <Collaps title={"Equipement"} className={Styles.logement__collaps} />
+          <Collaps
+            title="Equipement"
+            description={
+              <ul className={Styles.logement__equipementsContainer}>
+                {logement.equipments.map((equipment, index) => (
+                  <li key={index} className={Styles.logement__equipement}>
+                    {equipment}
+                  </li>
+                ))}
+              </ul>
+            }
+            className={Styles.logement__collaps}
+          />
         </div>
       </div>
     </div>
