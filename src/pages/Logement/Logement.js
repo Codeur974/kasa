@@ -1,18 +1,25 @@
 import doc from "@/doc.json";
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import Slider from "./slider/Slider";
-
+import { useEffect } from "react";
 import Styles from "./logement.module.scss";
 import Rating from "./rating/Rating"; // Assurez-vous que le chemin est correct
 import Collaps from "../../components/collaps/Collaps";
 
 const Logement = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const logement = doc.find((item) => item.id === id);
 
+  useEffect(() => {
+    if (!logement) {
+      navigate("/error"); // Redirige vers la page d'erreur si l'ID est incorrect
+    }
+  }, [logement, navigate]);
+
   if (!logement) {
-    return <div>Logement non trouvé</div>;
+    return null; // Retourne null pendant la redirection
   }
   const [firstName, lastName] = logement.host.name.split(" ");
   return (

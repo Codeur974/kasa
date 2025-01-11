@@ -1,0 +1,22 @@
+.error {
+  display: flex;
+  margin-top: 100px;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+  &__number {
+    font-family: Montserrat;
+    font-size: 288px;
+    color: #ff6060;
+    margin-top: 0px;
+    margin-bottom: 40px;
+  }
+  &__text {
+    font-size: 36px;
+    color: #ff6060;
+  }
+  &__link {
+    margin-top: 100px;
+    color: black;
+  }
+}
