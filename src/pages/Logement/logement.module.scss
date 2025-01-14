@@ -6,7 +6,9 @@
   &__content {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
   }
   &__host {
     display: flex;
@@ -20,12 +22,18 @@
       font-size: 18px;
       color: #ff6060;
     }
+    @media (max-width: 768px) {
+      margin-top: 0px;
+    }
   }
   &__rating {
     display: flex;
     justify-content: end;
     margin-top: 30px;
     margin-bottom: 27px;
+    @media (max-width: 768px) {
+      margin-top: 40px;
+    }
   }
   .logement__title {
     color: #ff6060;
@@ -33,30 +41,52 @@
     margin: 20px 0 0 0;
   }
   .logement__location {
-    margin: 0;
+    margin-top: 10px;
     font-weight: 500;
   }
   .logement__tags {
     display: flex;
+    width: 100%;
+    display: flex;
     gap: 10px;
+    @media (max-width: 768px) {
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
   }
   .logement__tag {
     display: flex;
     justify-content: center;
-
+    align-items: center;
     background-color: #ff6060;
     color: white;
     padding: 0px 20px;
     border-radius: 10px;
     width: auto;
     height: 25px;
+    @media (max-width: 768px) {
+      font-size: 12px;
+    }
   }
+
   .logement__collaps {
-    max-width: 582px;
+    width: 100%;
   }
 
   .logement__block {
     width: 44%;
+    @media (max-width: 768px) {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      margin-bottom: 20px;
+      align-items: center;
+    }
+    .logement__blockContent {
+      display: flex;
+      flex-direction: column;
+    }
   }
   .logement__lastname {
     display: flex;
@@ -64,10 +94,24 @@
   }
   .logement__equipement {
     list-style: none;
+    width: 100%;
   }
   .logement__equipementsContainer {
     padding: 0px;
     margin: 0;
+  }
+  .logement__collapsContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 55px;
+    margin-bottom: 40px;
+    @media (max-width: 1024px) {
+      gap: 5px;
+    }
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      margin-bottom: 30px;
+    }
   }
 }
 
@@ -75,4 +119,7 @@
   border-radius: 100%;
   width: 64px;
   height: 64px;
+}
+.collaps__title {
+  font-size: 18px;
 }

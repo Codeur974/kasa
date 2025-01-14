@@ -3,7 +3,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
 
-export default function Collaps({ title, description, className }) {
+export default function Collaps({
+  title,
+  description,
+  className,
+  titleClassName,
+}) {
   const [isOpen, setOpen] = useState(false);
 
   const toggleDescription = () => {
@@ -13,7 +18,9 @@ export default function Collaps({ title, description, className }) {
   return (
     <div className={`${className}`}>
       <div className={styles.collaps} onClick={toggleDescription}>
-        <h3 className={styles.collaps__title}>{title}</h3>
+        <h3 className={`${styles.collaps__title} ${titleClassName}`}>
+          {title}
+        </h3>
 
         <div>
           <FontAwesomeIcon

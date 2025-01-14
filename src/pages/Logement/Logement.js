@@ -19,14 +19,14 @@ const Logement = () => {
   }, [logement, navigate]);
 
   if (!logement) {
-    return null; // Retourne null pendant la redirection
+    return null;
   }
   const [firstName, lastName] = logement.host.name.split(" ");
   return (
     <div className={Styles.logement}>
       <Slider pictures={logement.pictures} />
       <div className={Styles.logement__content}>
-        <div className={Styles.logement__block}>
+        <div className={Styles.logement__blockContent}>
           <h2 className={Styles.logement__title}>{logement.title}</h2>
           <p className={Styles.logement__location}>{logement.location}</p>
           <h4 className={Styles.logement__tags}>
@@ -36,11 +36,6 @@ const Logement = () => {
               </span>
             ))}
           </h4>
-          <Collaps
-            title={"Description"}
-            description={logement.description}
-            className={Styles.logement__collaps}
-          />
         </div>
 
         <div className={Styles.logement__block}>
@@ -59,10 +54,19 @@ const Logement = () => {
           <div className={Styles.logement__rating}>
             <Rating rating={logement.rating} />
           </div>
-
-          <Collaps
-            title="Equipement"
-            description={
+        </div>
+      </div>
+      <div className={Styles.logement__collapsContainer}>
+        <Collaps
+          title={"Description"}
+          description={logement.description}
+          className={Styles.logement__collaps}
+          titleClassName={Styles.collaps__title}
+        />
+        <Collaps
+          title="Equipement"
+          description={
+            <div>
               <ul className={Styles.logement__equipementsContainer}>
                 {logement.equipments.map((equipment, index) => (
                   <li key={index} className={Styles.logement__equipement}>
@@ -70,10 +74,11 @@ const Logement = () => {
                   </li>
                 ))}
               </ul>
-            }
-            className={Styles.logement__collaps}
-          />
-        </div>
+            </div>
+          }
+          className={Styles.logement__collaps}
+          titleClassName={Styles.collaps__title}
+        />
       </div>
     </div>
   );

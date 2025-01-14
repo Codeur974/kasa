@@ -1,6 +1,4 @@
-import React from "react";
-
-import { useState } from "react";
+import React, { useState } from "react";
 import Styles from "./slider.module.scss";
 
 function Slider({ pictures }) {
@@ -18,17 +16,26 @@ function Slider({ pictures }) {
 
   return (
     <div className={Styles.slider}>
-      <button className={Styles.prev} onClick={prevSlide}>
-        ❮
-      </button>
+      {pictures.length > 1 && (
+        <>
+          <button className={Styles.prev} onClick={prevSlide}>
+            ❮
+          </button>
+          <button className={Styles.next} onClick={nextSlide}>
+            ❯
+          </button>
+        </>
+      )}
       <img
         src={pictures[currentIndex]}
         alt={`Slide ${currentIndex}`}
         className={Styles.image}
       />
-      <button className={Styles.next} onClick={nextSlide}>
-        ❯
-      </button>
+      {pictures.length > 1 && (
+        <div className={Styles.counter}>
+          {currentIndex + 1}/{pictures.length}
+        </div>
+      )}
     </div>
   );
 }
