@@ -1,4 +1,5 @@
-import { Link } from "react-router";
+import React from "react";
+import { NavLink } from "react-router-dom";
 import styles from "./header.module.scss";
 
 function Header() {
@@ -7,12 +8,18 @@ function Header() {
       <img src={`${process.env.PUBLIC_URL}/images/LOGO.png`} alt="logo" />
 
       <nav className={styles.navbar}>
-        <Link to="/" className={styles.link}>
-          Acueil
-        </Link>
-        <Link to="about" className={styles.link}>
-          A propos
-        </Link>
+        <NavLink
+          to="/"
+          className={({ isActive }) => (isActive ? styles.active : styles.link)}
+        >
+          Accueil
+        </NavLink>
+        <NavLink
+          to="/about"
+          className={({ isActive }) => (isActive ? styles.active : styles.link)}
+        >
+          À propos
+        </NavLink>
       </nav>
     </div>
   );

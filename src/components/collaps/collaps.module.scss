@@ -43,4 +43,7 @@
   max-width: 1023px;
   margin: auto;
   margin-bottom: 35px;
+  @media (max-width: 768px) {
+    box-sizing: border-box;
+  }
 }

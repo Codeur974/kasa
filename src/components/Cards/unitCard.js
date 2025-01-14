@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 function unitCard({ itemCard, onClick }) {
   return (
     <div className={styles.unitCard}>
-      <Link to={`/logement/${itemCard.id}`}>
+      <Link to={`/logement/${itemCard.id}`} className={styles.unitCard__link}>
         <li key={itemCard.id} onClick={onClick}>
           <h3>{itemCard.title}</h3>
           <img src={itemCard.cover} alt={itemCard.title} />

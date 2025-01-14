@@ -1,29 +1,37 @@
 .cards {
-  display: flex;
-  justify-content: center;
-
   ul {
+    margin: auto;
     max-width: 1240px;
     position: relative;
     width: 95%;
     margin-top: 35px;
     display: grid;
-    grid-template-columns: repeat((3, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
     padding: 0;
     gap: 40px 20px;
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
-      width: 100vw;
+      width: 100%;
+      padding: 0; /* Ajoutez du padding pour aligner le contenu */
     }
   }
+
   @media (max-width: 768px) {
     justify-content: start;
   }
 }
+
 .unitCard {
   display: flex;
+  flex-wrap: wrap; /* Permet aux cartes de se répartir sur plusieurs lignes si nécessaire */
+  justify-content: center; /* Centre les cartes horizontalement */
+  width: 100%; /* Assure que le conteneur prend toute la largeur disponible */
+  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
 
   li {
     position: relative;
@@ -32,12 +40,17 @@
     width: 100%;
     max-width: 340px; /* Limite la largeur maximale à 340px */
     height: 340px;
-    margin: auto;
+
     box-sizing: border-box;
-    @media (max-width: 768px) {
-      max-width: 100%; /* Limite la largeur maximale à 340px */
+    @media (max-width: 1024px) {
+      max-width: 100%;
       margin: 0;
     }
+
+    @media (max-width: 768px) {
+      max-width: 100%; /* Assure que les cartes prennent toute la largeur disponible en mode mobile */
+    }
+
     h3 {
       position: absolute;
       font-size: 18px;
@@ -47,44 +60,21 @@
       left: 10px;
       z-index: 10;
     }
+
     img {
       width: 100%;
-      max-height: 340px; /* Limite la hauteur maximale à 340px */
+      height: 100%;
+      max-height: 340px;
       border-radius: 10px;
       object-fit: cover;
       box-sizing: border-box;
-      object-position: center;
-      @media (max-width: 768px) {
-        height: 340px; /* Limite la hauteur maximale à 340px */
-        width: 97vw;
-        padding: 5px;
-        margin: auto;
+      @media (max-width: 1024px) {
+        max-width: 100%;
       }
     }
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 50%; /* Ajustez la hauteur selon vos besoins */
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
-      border-radius: 10px; /* Assurez-vous que le rayon de bordure correspond à celui de l'image */
-
-      @media (max-width: 768px) {
-        width: 96vw;
-      }
-    }
-    @media (max-width: 1024px) {
-      max-width: 250px; /* Limite la largeur maximale à 340px */
-      height: 250px;
-      gap: 20px;
-    }
-    @media (max-width: 768px) {
-      height: 100%;
-      gap: 20px;
-      flex-direction: column;
-      grid-template-columns: 1fr;
-    }
+  }
+  &__link {
+    width: 100%;
+    box-sizing: border-box;
   }
 }
