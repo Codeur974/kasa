@@ -4,9 +4,13 @@
   height: auto;
   margin: 50px auto;
   margin-bottom: 35px;
+
   @media (max-width: 768px) {
     max-width: 100%; /* Assure que la bannière prend toute la largeur disponible en mode téléphone */
-    margin: 20px auto;
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding: 0 10px;
+    box-sizing: border-box;
   }
 
   img {
@@ -22,15 +26,13 @@
     }
   }
   .banner__title {
-    width: 100%;
     position: absolute;
-    top: 26%;
+    top: 25%;
     left: 50%;
-    transform: translate(-50%, -50%);
     color: white;
     font-size: 48px;
     font-weight: 700;
-    text-align: center;
+    transform: translate(-50%, -50%);
     @media (max-width: 1024px) {
       font-size: 36px;
     }
@@ -38,11 +40,8 @@
       width: 65%;
       font-size: 24px;
       color: white;
-      top: 15%;
-      left: 40%;
-      text-align: start;
-      align-items: start;
-      margin-top: 0;
+      top: 14%;
+      left: 50%;
     }
   }
   @media (max-width: 768px) {

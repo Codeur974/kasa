@@ -12,13 +12,13 @@ function Header() {
           to="/"
           className={({ isActive }) => (isActive ? styles.active : styles.link)}
         >
-          ACCUEIL
+          Accueil
         </NavLink>
         <NavLink
           to="/about"
           className={({ isActive }) => (isActive ? styles.active : styles.link)}
         >
-          A PROPOS
+          A Propos
         </NavLink>
       </nav>
     </div>

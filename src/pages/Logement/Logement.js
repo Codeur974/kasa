@@ -66,15 +66,13 @@ const Logement = () => {
         <Collaps
           title="Equipement"
           description={
-            <div>
-              <ul className={Styles.logement__equipementsContainer}>
-                {logement.equipments.map((equipment, index) => (
-                  <li key={index} className={Styles.logement__equipement}>
-                    {equipment}
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul className={Styles.logement__equipementsContainer}>
+              {logement.equipments.map((equipment, index) => (
+                <li key={index} className={Styles.logement__equipement}>
+                  {equipment}
+                </li>
+              ))}
+            </ul>
           }
           className={Styles.logement__collaps}
           titleClassName={Styles.collaps__title}

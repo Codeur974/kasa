@@ -9,7 +9,6 @@
   padding: 0 15px;
   color: #ffffff;
   border-radius: 10px;
-  margin-top: 20px;
   box-sizing: border-box;
 }
 .collaps__description {
@@ -21,6 +20,7 @@
 .collaps__description.open {
   max-height: 200px;
   padding: 15px;
+  background-color: #f6f6f6;
 }
 
 .collaps__description.closed {
@@ -40,10 +40,14 @@
   transform: rotate(-180deg);
 }
 .collapsContainer {
+  display: flex;
+  flex-direction: column;
   max-width: 1023px;
-  margin: auto;
-  margin-bottom: 35px;
+  margin: 20px auto 40px;
+  gap: 20px;
   @media (max-width: 768px) {
     box-sizing: border-box;
+    padding: 0 10px;
+    margin-bottom: 20px;
   }
 }

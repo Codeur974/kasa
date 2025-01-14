@@ -34,7 +34,7 @@ export default function Collaps({
           isOpen ? styles.open : styles.closed
         }`}
       >
-        <p className={styles.collaps__paragraph}>{description}</p>
+        <div className={styles.collaps__paragraph}>{description}</div>
       </div>
     </div>
   );

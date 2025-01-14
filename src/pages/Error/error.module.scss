@@ -4,17 +4,30 @@
   align-items: center;
   flex-direction: column;
   height: 80vh;
+  @media (max-width: 768px) {
+    gap: 113px;
+  }
   &__number {
     font-family: Montserrat;
     font-size: 288px;
     color: #ff6060;
     margin-top: 0px;
     margin-bottom: 40px;
+    @media (max-width: 768px) {
+      font-size: 96px;
+    }
   }
   &__text {
     font-size: 36px;
     color: #ff6060;
+    @media (max-width: 768px) {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      font-size: 18px;
+    }
   }
+
   &__link {
     margin-top: 100px;
     color: black;
