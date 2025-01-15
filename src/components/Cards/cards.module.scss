@@ -30,17 +30,17 @@
 
 .unitCard {
   display: flex;
-  flex-wrap: wrap; /* Permet aux cartes de se répartir sur plusieurs lignes si nécessaire */
-  justify-content: center; /* Centre les cartes horizontalement */
-  width: 100%; /* Assure que le conteneur prend toute la largeur disponible */
-  box-sizing: border-box; /* Inclut le padding et la bordure dans la largeur totale */
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
 
   li {
     position: relative;
     display: flex;
     justify-content: center;
     width: 100%;
-    max-width: 340px; /* Limite la largeur maximale à 340px */
+    max-width: 340px;
     height: 340px;
 
     box-sizing: border-box;
@@ -50,7 +50,7 @@
     }
 
     @media (max-width: 768px) {
-      max-width: 100%; /* Assure que les cartes prennent toute la largeur disponible en mode mobile */
+      max-width: 100%;
       padding: 0 10px;
     }
 

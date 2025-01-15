@@ -17,7 +17,7 @@
   img {
     width: 122px;
     height: 40px;
-    filter: brightness(0) invert(1); /* Applique un filtre pour rendre l'image blanche */
+    filter: brightness(0) invert(1);
 
     @media (max-width: 768px) {
       margin: 0;
