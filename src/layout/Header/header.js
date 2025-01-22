@@ -1,11 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./header.module.scss";
+import image from "@/images/LOGO.png";
 
 function Header() {
   return (
     <div className={styles.header}>
-      <img src={`${process.env.PUBLIC_URL}/images/LOGO.png`} alt="logo" />
+      <img src={image} alt="logo" />
 
       <nav className={styles.navbar}>
         <NavLink
