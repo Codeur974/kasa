@@ -1,10 +1,10 @@
 import doc from "@/doc.json";
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import Slider from "./slider/Slider";
+import Slider from "../../components/slider/Slider";
 import { useEffect } from "react";
 import Styles from "./logement.module.scss";
-import Rating from "./rating/Rating"; // Assurez-vous que le chemin est correct
+import Rating from "../../components/rating/Rating"; // Assurez-vous que le chemin est correct
 import Collaps from "../../components/collaps/Collaps";
 
 const Logement = () => {
@@ -18,9 +18,6 @@ const Logement = () => {
     }
   }, [logement, navigate]);
 
-  if (!logement) {
-    return null;
-  }
   const [firstName, lastName] = logement.host.name.split(" ");
   return (
     <div className={Styles.logement}>
@@ -64,16 +61,8 @@ const Logement = () => {
           titleClassName={Styles.collaps__title}
         />
         <Collaps
-          title="Equipement"
-          description={
-            <ul className={Styles.logement__equipementsContainer}>
-              {logement.equipments.map((equipment, index) => (
-                <li key={index} className={Styles.logement__equipement}>
-                  {equipment}
-                </li>
-              ))}
-            </ul>
-          }
+          title="Equipment"
+          equipments={logement.equipments}
           className={Styles.logement__collaps}
           titleClassName={Styles.collaps__title}
         />

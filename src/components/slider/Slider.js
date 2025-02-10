@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Styles from "./slider.module.scss";
+import { SlArrowLeft, SlArrowRight } from "react-icons/sl";
 
 function Slider({ pictures }) {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -19,10 +20,10 @@ function Slider({ pictures }) {
       {pictures.length > 1 && (
         <>
           <button className={Styles.prev} onClick={prevSlide}>
-            ❮
+            <SlArrowLeft />
           </button>
           <button className={Styles.next} onClick={nextSlide}>
-            ❯
+            <SlArrowRight />
           </button>
         </>
       )}

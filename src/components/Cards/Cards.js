@@ -1,24 +1,16 @@
-import doc from "@/doc.json";
-import UnitCard from "./unitCard";
+import api from "@/doc.json";
+import Card from "./Card";
 import styles from "./cards.module.scss";
 
-const Card = () => {
-  const handleCardClick = (itemCard) => {
-    console.log("Card clicked:", itemCard);
-  };
-
+const Cards = () => {
   return (
     <div className={styles.cards}>
       <ul>
-        {doc.map((itemCard) => (
-          <UnitCard
-            itemCard={itemCard}
-            key={itemCard.id}
-            onClick={() => handleCardClick(itemCard)}
-          />
+        {api.map((itemCard) => (
+          <Card itemCard={itemCard} key={itemCard.id} />
         ))}
       </ul>
     </div>
   );
 };
-export default Card;
+export default Cards;

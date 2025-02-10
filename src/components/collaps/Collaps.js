@@ -1,6 +1,5 @@
 import styles from "./collaps.module.scss";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
+import { SlArrowUp } from "react-icons/sl";
 import { useState } from "react";
 
 export default function Collaps({
@@ -8,6 +7,7 @@ export default function Collaps({
   description,
   className,
   titleClassName,
+  equipments,
 }) {
   const [isOpen, setOpen] = useState(false);
 
@@ -23,8 +23,7 @@ export default function Collaps({
         </h3>
 
         <div>
-          <FontAwesomeIcon
-            icon={faAngleUp}
+          <SlArrowUp
             className={`${styles.icon} ${isOpen ? styles.rotate : ""}`}
           />
         </div>
@@ -34,7 +33,18 @@ export default function Collaps({
           isOpen ? styles.open : styles.closed
         }`}
       >
-        <div className={styles.collaps__paragraph}>{description}</div>
+        {description && (
+          <div className={styles.collaps__paragraph}>{description}</div>
+        )}
+        {equipments && (
+          <ul className={styles.collaps__equipmentsContainer}>
+            {equipments.map((equipement, index) => (
+              <li key={index} className={styles.collaps__equipment}>
+                {equipement}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   );
