@@ -9,7 +9,7 @@
     max-width: 100%;
     margin-top: 20px;
     margin-bottom: 0;
-    padding: 0 10px;
+    padding: 0 20px;
     box-sizing: border-box;
   }
 
@@ -18,34 +18,41 @@
     height: 223px;
     object-fit: cover;
     object-position: center;
-    border-radius: 25px;
+    border-radius: 15px;
     filter: brightness(50%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     @media (max-width: 768px) {
       height: 111px;
       width: 100%;
+      box-shadow: none;
     }
   }
   .banner__title {
     width: 100%;
     position: absolute;
-    top: 250px;
-    left: 25%;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     color: white;
     font-size: 48px;
     font-weight: 700;
-
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     margin: 0;
+
     @media (max-width: 1024px) {
       font-size: 36px;
-      top: 230px;
-      left: 15%;
+      top: 28%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
     @media (max-width: 768px) {
-      width: 65%;
+      width: 60%;
       font-size: 24px;
-      color: white;
-      top: 110px;
-      left: 8%;
+      top: 15%;
+      left: 40%;
+      text-align: start;
+      text-shadow: none;
     }
   }
 }

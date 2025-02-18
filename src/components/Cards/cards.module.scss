@@ -1,16 +1,19 @@
 .cards {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   ul {
-    margin: auto;
     max-width: 1240px;
-    position: relative;
-    width: 95%;
+    margin: auto;
+    padding: 55px;
     margin-top: 35px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     justify-content: center;
-    padding: 0;
-    gap: 40px 20px;
+    flex-wrap: wrap;
+    background-color: #f6f6f6;
+    border-radius: 25px;
+    box-sizing: border-box;
+    gap: 55px;
+
     @media (max-width: 1024px) {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -18,8 +21,10 @@
     @media (max-width: 768px) {
       grid-template-columns: 1fr;
       width: 100%;
-      margin-top: 22px;
-      gap: 24px;
+      padding: 9px 9px 0 9px;
+      background-color: white;
+      margin: 9px 0 0 0;
+      gap: 20px;
     }
   }
 
@@ -32,17 +37,13 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 100%;
-  box-sizing: border-box;
 
   li {
     position: relative;
     display: flex;
     justify-content: center;
     width: 100%;
-    max-width: 340px;
-    height: 340px;
-
+    height: 340px; // Hauteur maximale
     box-sizing: border-box;
     @media (max-width: 1024px) {
       max-width: 100%;
@@ -50,8 +51,10 @@
     }
 
     @media (max-width: 768px) {
-      max-width: 100%;
-      padding: 0 10px;
+      max-width: 440px;
+      width: 100%;
+      padding: 0 11px;
+      height: 255px;
     }
 
     h3 {
@@ -69,11 +72,10 @@
 
     img {
       width: 100%;
-      height: 100%;
-      max-height: 340px;
       border-radius: 10px;
       object-fit: cover;
       box-sizing: border-box;
+      height: 100%;
       @media (max-width: 1024px) {
         max-width: 100%;
       }
@@ -82,7 +84,7 @@
       content: "";
       position: absolute;
       bottom: 0;
-      left: 0;
+      left: 0px;
       width: 100%;
       height: 50%;
       background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
@@ -104,7 +106,7 @@
   &__link {
     display: flex;
     justify-content: center;
-    width: 100%;
+
     box-sizing: border-box;
   }
 }

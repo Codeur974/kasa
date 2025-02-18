@@ -1,23 +1,20 @@
 import doc from "@/doc.json";
 import React from "react";
-import { useParams, useNavigate } from "react-router-dom";
+
+import { useParams, Navigate } from "react-router-dom";
 import Slider from "../../components/slider/Slider";
-import { useEffect } from "react";
+
 import Styles from "./logement.module.scss";
 import Rating from "../../components/rating/Rating"; // Assurez-vous que le chemin est correct
 import Collaps from "../../components/collaps/Collaps";
 
 const Logement = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
   const logement = doc.find((item) => item.id === id);
 
-  useEffect(() => {
-    if (!logement) {
-      navigate("/error"); // Redirige vers la page d'erreur si l'ID est incorrect
-    }
-  }, [logement, navigate]);
-
+  if (!logement) {
+    return <Navigate to="/error" replace={true} />; // Utilise le composant Navigate pour rediriger
+  }
   const [firstName, lastName] = logement.host.name.split(" ");
   return (
     <div className={Styles.logement}>
@@ -38,7 +35,7 @@ const Logement = () => {
         <div className={Styles.logement__block}>
           <div className={Styles.logement__host}>
             <div className={Styles.logement__host__name}>
-              <p>{firstName}</p>
+              <p className={Styles.logement__firstname}>{firstName}</p>
               <p className={Styles.logement__lastname}>{lastName}</p>
             </div>
 
@@ -61,7 +58,7 @@ const Logement = () => {
           titleClassName={Styles.collaps__title}
         />
         <Collaps
-          title="Equipment"
+          title="Équipements"
           equipments={logement.equipments}
           className={Styles.logement__collaps}
           titleClassName={Styles.collaps__title}

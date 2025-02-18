@@ -3,16 +3,17 @@
   margin-top: 100px;
   align-items: center;
   flex-direction: column;
-  height: 80vh;
+  height: 75vh;
   @media (max-width: 768px) {
-    gap: 113px;
+    gap: 60px;
+    height: 60vh;
   }
   &__number {
     font-family: Montserrat;
     font-size: 288px;
     color: #ff6060;
     margin-top: 0px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     @media (max-width: 768px) {
       font-size: 96px;
     }
@@ -20,16 +21,24 @@
   &__text {
     font-size: 36px;
     color: #ff6060;
-    @media (max-width: 768px) {
+
+    @media (max-width: 1024px) {
       display: flex;
+      flex-direction: column;
       justify-content: center;
-      width: 100%;
+      align-items: center;
+      width: 80%;
+    }
+    @media (max-width: 768px) {
       font-size: 18px;
     }
   }
 
   &__link {
-    margin-top: 100px;
+    margin-top: 60px;
     color: black;
+    @media (max-width: 768px) {
+      margin-top: 30px;
+    }
   }
 }
