@@ -62,11 +62,15 @@
   transform: rotate(-180deg);
 }
 .collapsContainer {
+  padding: 0 50px;
   display: flex;
   flex-direction: column;
   max-width: 1023px;
   margin: 20px auto 40px;
   gap: 20px;
+  @media (max-width: 1024px) {
+    padding: 0 20px;
+  }
   @media (max-width: 768px) {
     box-sizing: border-box;
     padding: 0 20px;
