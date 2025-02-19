@@ -1,10 +1,18 @@
 .banner {
-  max-width: 1240px;
+  max-width: 1340px;
   width: 100%;
-  height: auto;
-  margin: 50px auto;
-  margin-bottom: 35px;
 
+  margin: auto;
+  margin-bottom: 35px;
+  padding: 0 50px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  @media (max-width: 1024px) {
+    padding: 0 20px;
+  }
   @media (max-width: 768px) {
     max-width: 100%;
     margin-top: 20px;
@@ -28,31 +36,27 @@
     }
   }
   .banner__title {
-    width: 100%;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     color: white;
     font-size: 48px;
     font-weight: 700;
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
     margin: 0;
+    position: absolute;
 
     @media (max-width: 1024px) {
       font-size: 36px;
-      top: 28%;
-      left: 50%;
-      transform: translate(-50%, -50%);
     }
-    @media (max-width: 768px) {
-      width: 60%;
-      font-size: 24px;
-      top: 15%;
-      left: 40%;
+
+    @media (max-width: 767px) {
+      width: 62%;
+      left: 35px;
       text-align: start;
+      font-size: 24px;
       text-shadow: none;
+    }
+    @media (max-width: 362px) {
+      font-size: 22px;
     }
   }
 }
