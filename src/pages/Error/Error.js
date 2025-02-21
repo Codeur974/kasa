@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./error.module.scss"; // Assurez-vous que le chemin est correct
+import styles from "./error.module.scss";
 
 function Error() {
   return (

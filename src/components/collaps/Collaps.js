@@ -2,13 +2,7 @@ import styles from "./collaps.module.scss";
 import { SlArrowUp } from "react-icons/sl";
 import { useState } from "react";
 
-export default function Collaps({
-  title,
-  description,
-  className,
-  titleClassName,
-  equipments,
-}) {
+export default function Collaps({ title, description, className, equipments }) {
   const [isOpen, setOpen] = useState(false);
 
   const toggleDescription = () => {
@@ -18,9 +12,7 @@ export default function Collaps({
   return (
     <div className={`${className}`}>
       <div className={styles.collaps} onClick={toggleDescription}>
-        <h3 className={`${styles.collaps__title} ${titleClassName}`}>
-          {title}
-        </h3>
+        <h3 className={styles.collaps__title}>{title}</h3>
 
         <div>
           <SlArrowUp
